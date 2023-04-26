@@ -3,18 +3,18 @@ import java.util.*;
 public class EnfosarLaFlota_FerGer {
 
 	static int Mida = 8;
-	
+
 	public static Scanner teclattext = new Scanner (System.in);
 	public static Scanner teclatnum = new Scanner (System.in);
-	
-	
+
+
 	public static String DemanarNomDelJugador(int jugador){
-	   	  String NomDelJugador; 
+	   	  String NomDelJugador;
 	      System.out.print("Entra el Nom del Jugador "+jugador+": ");
 	      NomDelJugador = teclattext.nextLine();
 	      return NomDelJugador;
 	}
-	
+
 	//Omplir El Joc Amb El Mar
 	public static void OmplirLaMatriuAmbMar(char[][] MatriuUsuari){
 	      for (int fila = 0; fila < MatriuUsuari.length; fila++) {
@@ -31,12 +31,10 @@ public class EnfosarLaFlota_FerGer {
 			int posicion2 = Integer.parseInt(separar[1]) - 1;
 			joc[posicion1][posicion2] = 'v';
    }
-   
-   
-   
+
    //Per Llançar Els Misils a Els Vaixells
 	public static void llensarMisil (char joc[][], String posicio) {
-		
+
 		String separar [] = posicio.split(",");
 		int posicio1 = Integer.parseInt(separar[0]) - 1;
 		int posicio2 = Integer.parseInt(separar[1]) - 1;
@@ -50,14 +48,14 @@ public class EnfosarLaFlota_FerGer {
 
 	// Comproba si el Numeros Introdüit esta en El Rang
 	public static boolean comprovaPosicions(String posicio, char joc[][], boolean esPosicio) {
-			
-		boolean posicioCorrecta = true;	
+
+		boolean posicioCorrecta = true;
 			try {
-				
+
 				String parts [] = posicio.split(",");
 				int posicion1 = Integer.parseInt(parts[0]);
 				int posicion2 = Integer.parseInt(parts[1]);
-				
+
 				if (posicion1 < 1 || posicion1 < 1) {
 						System.out.println("Una de les Posicions Té un Nombre Més Petit del Demanat");
 						System.out.println("Posa Un Altre"+"\n");
